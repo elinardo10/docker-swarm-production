@@ -16,7 +16,7 @@ Clone o repositório do GitHub para sua máquina local:
 git clone git@github.com:seu-usuario/seu-repositorio.git
 cd seu-repositorio
 ```
-2. Configuração de Variáveis de Ambiente
+### 2. Configuração de Variáveis de Ambiente
 Antes de iniciar, você precisará configurar o arquivo .env com as variáveis de ambiente necessárias para a configuração do MySQL.
 
 Crie ou edite o arquivo .env:
@@ -29,31 +29,31 @@ MYSQL_ROOT_PASSWORD=sua_senha_root
 TZ=UTC
 ```
 
-3. Inicializar o Docker Swarm
+### 3. Inicializar o Docker Swarm
 Se o Docker Swarm ainda não foi inicializado na sua máquina, você pode iniciar com o seguinte comando:
 
 ```bash
 docker swarm init --advertise-addr=IP_DO_SERVIDOR
 ```
 
-4. Criando Network
+### 4. Criando Network
 Aqui você cria a rede que será usada para se comunicar com os containers da vps. No meu exemplo chamo de "web", mas voce pode criar como quiser pelo comando abaixo. Só lembrar de alterar nos arquivos docker-compose:
 
 ```bash
 docker network create --driver=overlay web
 ```
 
-4. Subir os Stacks com Docker Compose
+### 5. Subir os Stacks com Docker Compose
 Para subir os stacks do Docker definidos nos arquivos, execute:
 
 ```bash
 docker stack deploy -c docker-compose.yml nome_do_stack
 ```
-5. Listando as Stacks
+### 6. Listando as Stacks
 ```bash
 docker stack ps infra_stack
 ```
-6. Removendo Stacks
+### 7. Removendo Stacks
 ```bash
 docker stack rm infra_stack
 ```

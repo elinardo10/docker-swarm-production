@@ -32,20 +32,28 @@ TZ=UTC
 3. Inicializar o Docker Swarm
 Se o Docker Swarm ainda não foi inicializado na sua máquina, você pode iniciar com o seguinte comando:
 
+```bash
+docker swarm init --advertise-addr=IP_DO_SERVIDOR
 ```
-docker swarm init
+
+4. Criando Network
+Aqui você cria a rede que será usada para se comunicar com os containers da vps. No meu exemplo chamo de "web", mas voce pode criar como quiser pelo comando abaixo. Só lembrar de alterar nos arquivos docker-compose:
+
+```bash
+docker network create --driver=overlay web
 ```
+
 4. Subir os Stacks com Docker Compose
 Para subir os stacks do Docker definidos nos arquivos, execute:
 
-```
+```bash
 docker stack deploy -c docker-compose.yml nome_do_stack
 ```
 5. Listando as Stacks
-```
+```bash
 docker stack ps infra_stack
-````
-6. Removendo Stacks
 ```
+6. Removendo Stacks
+```bash
 docker stack rm infra_stack
 ```

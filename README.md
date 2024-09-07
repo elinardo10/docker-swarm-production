@@ -1,6 +1,6 @@
-# Projeto Docker Swarm com MySQL
+# Infra com Docker Swarm
 
-Este repositório contém a configuração necessária para subir stacks Docker utilizando Docker Swarm, com MySQL, criação de banco de dados e usuário configurados automaticamente via script.
+Este repositório contém a configuração necessária para subir stacks Docker utilizando Docker Swarm, Traefik para roteamento, balancemento e proxy reverso; MySQL, Redis e muitos outros que estão sendo atualizado. A ideia é subir um ambiente poderoso para produção todo com docker. criação de banco de dados e usuário configurados automaticamente via script.
 
 ## Requisitos
 
